@@ -14,8 +14,8 @@ Command line Application that takes in currency and language flags (using ISO co
         $ cd currency_converter
         $ python cheapstocks.py 
             (optional flags -h for help menu,
-                            -c for displaying currency,
-                            -l for displaying languages)
+                            -c for displaying currency :use    ISO 4217 code as argument,
+                            -l for displaying languages : use ISO 639-1 code as argument
         
 ```
         
