@@ -1,5 +1,6 @@
 import argparse
 import csv
+import config
 import requests
 import json
 
@@ -24,10 +25,10 @@ for cols in lang_file:
         print (cols)
         
 def main():
-    api_url_end='http://data.fixer.io/api/latest?access_key=0722e5bf94e83d392f37e7bb90ee6056' 
-
+    api_url_end='http://data.fixer.io/api/latest?access_key=' 
+    access_key = config.access_key
 # fetching json data from fixer.io api
-    response=requests.get(api_url_end)
+    response=requests.get(api_url_end+access_key)
  
 # checking user input on prefered language
     language=input('Enter your Prefered language : ') or 'English'
@@ -57,7 +58,7 @@ def main():
 #error handling of amount input
     while True:
         try:
-            amount_to_convert=int(input("Enter the amount to buy stock:"))
+            amount_to_convert=int(input("Enter the amount to buy stock: "))
             break
         except ValueError:
             print('Invalid number. Try again')   
